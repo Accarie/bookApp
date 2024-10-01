@@ -40,9 +40,7 @@ router.post('/bcrypt', async (req, res) => {
 });
 function validate(req) {
     const schema = {
-        email: Joi.string()
-            .max(255)
-            .min(3).required().email(),
+        email: Joi.string().max(255).min(3).required().email(),
         password: Joi.string().max(255).min(3).required()
     }
     return Joi.validate(req, schema)
